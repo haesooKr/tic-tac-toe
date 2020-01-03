@@ -6,12 +6,12 @@ export default class Game extends Component {
         history: [{
             squares: Array(9).fill(null),
         }],
+        winnerLine: [], // fixing
         stepNumber: 0,
         xIsNext: true
     }
     handleClick(i){
         const history = this.state.history.slice(0, this.state.stepNumber + 1)
-        console.log(history);
         const current = history[history.length - 1];
         const squares = [...current.squares];
         
@@ -21,6 +21,7 @@ export default class Game extends Component {
             history: history.concat([{
                 squares: squares,
             }]),
+            winnerLine: addWinnerLine(squares),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext
         });
@@ -56,7 +57,8 @@ export default class Game extends Component {
       return (
         <div className="game">
           <div className="game-board">
-            <Board 
+            <Board
+                winnerLine={this.state.winnerLine}
                 squares={current.squares} 
                 onClick={(i) => this.handleClick(i)}
             />
@@ -88,6 +90,29 @@ export default class Game extends Component {
             squares[a] === squares[c]) {
             return squares[a];
         }
-        return null;
     }
+    return null;
 }
+
+const addWinnerLine = (squares) => {
+    const lines = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ];
+    for(let line of lines){
+        const [a,b,c] = line;
+        if( squares[a] && 
+            squares[a] === squares[b] && 
+            squares[a] === squares[c]) {
+            return [a,b,c];
+        }
+    }
+    return null;
+}
+// fixing
