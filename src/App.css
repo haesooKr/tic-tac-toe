@@ -12,25 +12,38 @@ body{
     color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .game h1{
     padding: 10px;
     text-align: center;
 }
 .game-board{
+    padding: 5px;
+    width: 350px;
+    height: 350px;
     border-radius: 30px;
     background-color: rgb(250, 186, 186);
 }
+.game-board > div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 .game-board .board-row{
+    flex: 1;
     display: flex;
     margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
 .game-board button{
+    border: 1px solid rgb(216, 134, 134);
     margin: 10px;
-    border: 3px solid #000;
     font-size: 2rem;
-    width: 33.3%;
-    height: 100px;
+    width: 33.33%;
+    height: 100%;
     background-color: rgb(252, 164, 164);
     border-radius: 20px;
     
@@ -42,7 +55,6 @@ body{
     font-size: 1.4rem;
 }
 .game-info ol{
-    overflow: scroll;
     padding: 5px;
     list-style-type: none;
 }
@@ -50,8 +62,58 @@ body{
     margin: 4px 0;
 }
 .game-info button{
+    border: none;
+    background-color: transparent;
     color: white;
 }
 .win{
     color: red;
+}
+
+@media only screen and (min-width: 768px){
+    .game h1{
+        font-size: 4rem;
+        margin: 20px 0;
+    }
+    .game-board{
+        width: 600px;
+        height: 600px;
+    }
+    .game-info > div{
+        font-size: 2rem;
+    }
+    .game-info *{
+        margin: 10px 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .App{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .game{
+        flex-direction: row;
+    }
+    .game h1{
+        flex: 2;
+
+    }
+    .game-board{
+        margin: 30px;
+        padding: 0;
+        flex: 4;
+        max-width: 600px;
+        max-height: 600px;
+    }
+    .game-info{
+        min-width: 100px;
+        flex-direction: column;
+        flex: 2;
+    }
+
 }
