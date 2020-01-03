@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+}
+.game{
+    width: 100vw;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.game h1{
+    padding: 10px;
+    text-align: center;
+}
+.game-board{
+    border-radius: 30px;
+    background-color: rgb(250, 186, 186);
+}
+.game-board .board-row{
+    display: flex;
+    margin: 10px;
+}
+.game-board button{
+    margin: 10px;
+    border: 3px solid #000;
+    font-size: 2rem;
+    width: 33.3%;
+    height: 100px;
+    background-color: rgb(252, 164, 164);
+    border-radius: 20px;
+    
+}
+
+.game-info{
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.game-info ol{
+    overflow: scroll;
+    padding: 5px;
+    list-style-type: none;
+}
+.game-info ol li{
+    margin: 4px 0;
+}
+.game-info button{
+    color: white;
+}
+.win{
+    color: red;
+}
