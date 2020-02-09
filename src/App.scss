@@ -1,0 +1,52 @@
+@import 'reset-css';
+
+.game{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    flex: 0.2;
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .game-board{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .board-row{
+      display: flex;
+      padding: 0;
+      margin: 0;
+      
+
+      .square{
+        background-color: gray;
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        color: white;
+      }
+    }
+  }
+
+  .game-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    div{
+      margin: 5px;
+    }
+  }
+}
